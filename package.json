@@ -1,0 +1,31 @@
+{
+  "name": "your-project-name",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "description": "This node js application is basically for testing over jenkins .\r We can run this ans expose  sample APIs to test.\r It requires Express js, Body Parser, mysql dependancies.\r Simply run index.js to get the application up and running.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Shivani-siri/skillupnodejs.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Shivani-siri/skillupnodejs/issues"
+  },
+  "homepage": "https://github.com/Shivani-siri/skillupnodejs#readme",
+  "dependencies": {
+    "body-parser": "^1.20.3",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "mysql": "^2.18.1",
+    "mysql2": "^3.12.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.9"
+  }
+}

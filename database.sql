@@ -1,0 +1,5 @@
+CREATE DATABASE test_db;
+CREATE TABLE example_table (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100)
+);

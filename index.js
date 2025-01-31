@@ -1,19 +1,29 @@
-var express=require('express')
-var bodyParser=require('body-parser')
-var mysql=require('mysql')
-var app=express()
-app.use(bodyParser())
+const express = require('express');
+const bodyParser = require('body-parser');
+const mysql = require('mysql2');
 
-app.get("/",function(request,response){
-  response.send("hello from express js....")
+const app = express();
+app.use(bodyParser.json());
+
+const db = mysql.createConnection({
+    host: 'db',
+    user: 'root',
+    password: '2233',
+    database: 'testdb'
+});
+
+db.connect(err => {
+    if (err) {
+        console.error('Error connecting to MySQL:', err.stack);
+        return;
+    }
+    console.log('MySQL Connected...');
 });
 
 
-app.get("/date",function(request,response){
-  response.send("Date is:.."+new Date().toLocaleString())
+app.get('/', (req, res) => {
+    res.send('Node.js DevOps App Running!');
 });
 
-app.listen(9595,function(err){
-  if (err) throw err
-  console.log("Server started on port 9595, to shut down hit ctrl+c")
-})
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
